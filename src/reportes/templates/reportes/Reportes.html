@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'reportes/btnAgregarReporte.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block titulo %}
+    Reportes
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="agregarVenta agregarVentaMT agregarProducto" id="agregarReporte">
+    <div>
+        <a href="{% url 'ventas:agregarReporte'%}" class="btn btn-success">Agregar Reporte</a>
+    </div>
+    <div>
+        <img src="{% static 'imgs/btn.png' %}" id="btn_AgregarReporte">
+    </div>
+</div>
+
+<div class="seccion1 seccion1--ListaVentas seccion1--ListarReportes">
+  <div class="container seccion1__columnas">
+    {% for reporte in object_list %}
+        <div class="card card--edit mb-3">
+            {% if reporte.imagen %}
+                <img src="{{reporte.imagen.url}}" class="card-img-top" alt="{{reporte.nombre}}">
+            {% endif %}
+            <div class="card-body">
+                <div class="card__titulo">
+                    <h5 class="card-title">{{reporte.nombre}}</h5>
+                </div>
+                <div class="card__valor">
+                    <p class="card-text">{{reporte.comentarios|truncatewords:2}}</p>
+                </div>
+                <div class="card__botones">
+                    <a href="{{reporte.obtener_url}}" class="btn btn-primary">Detalles</a>
+                    <a href="{% url 'reportes:PDF' reporte.nombre %}" class="btn btn-success">PDF</a>
+                    <a href="{% url 'reportes:Eliminar' reporte.nombre %}" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock contenido %}

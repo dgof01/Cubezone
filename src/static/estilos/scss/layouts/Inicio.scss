@@ -1,0 +1,51 @@
+.seccion1 {
+    background-color        :       $color-Morado;
+    width                   :       100%;
+    margin                  :       0;
+}
+
+.seccion1__columnas {
+    display                 :       grid;
+    grid-template-columns   :       repeat(1,1fr);
+    padding                 :       2rem;
+    @media (min-width: 768px) {
+    grid-template-columns   :       repeat(2,1fr);
+    padding                 :       2rem;
+    }
+}
+
+.seccion2 {
+    background-color        :       $color-Amarillo;
+    width                   :       100%;
+    margin                  :       0;
+}
+
+.seccion2__columnas {
+    display                 :       grid;
+    grid-template-columns   :       repeat(1,1fr);
+    padding                 :       2rem;
+    @media (min-width: 768px) {
+    grid-template-columns   :       repeat(2,1fr);
+    padding                 :       2rem;
+    }
+}
+
+.seccion3 {
+    background-color        :       transparent;
+    width                   :       100%;
+    margin                  :       0;
+}
+
+.seccion3__columnas {
+    display                 :       grid;
+    grid-template-columns   :       repeat(1,1fr);
+    padding                 :       2rem;
+    @media (min-width: 768px) {
+    grid-template-columns   :       repeat(2,1fr);
+    padding                 :       2rem;
+    }
+    @media (min-width: 992px) {
+    grid-template-columns   :       repeat(4,1fr);
+    padding                 :       2rem;
+    }
+}

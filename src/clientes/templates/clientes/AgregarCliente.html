@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block scripts %}
+    <script src="{% static 'clientes/agregarCliente.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block titulo %}
+Agregar Cliente
+{% endblock titulo %}
+
+{% block contenido %}
+  <div class="container mt-3 mb-3 tituloFormulario">
+    <h5>Ingresa la información del cliente nuevo</h5>
+    <div id="notificacionProceso"></div>
+    <form id="formularioCliente" class="formularios" autocomplete="off">
+      {% csrf_token %}
+      {{formulario|crispy}}
+      <button type="submit" class="btn btn-info mt-2 btnAgregar">Agregar</button>
+    </form>
+  </div>
+{% endblock contenido %}

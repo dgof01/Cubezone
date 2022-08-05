@@ -1,0 +1,12 @@
+@mixin from($res) {
+    @if map-has-key($resoluciones, $res) {
+      @media screen and (min-width : map_get($resoluciones, $res)) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width : $res) {
+        @content;
+      }
+    }
+  }
+  

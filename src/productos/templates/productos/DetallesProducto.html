@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+    Detalles sobre {{producto.nombre}}
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container detallesProducto">
+    {% if actualizado %}
+        <div class="alert alert-primary" role="alert">
+            La información del producto se ha actualizado
+        </div>
+    {% endif %}
+    <div class="">
+      <div class="producto__img">
+        <img src="{{producto.imagen.url}}" class="img-fluid" alt="{{producto.nombre}}">
+      </div>
+      <div class="producto__info">
+        <p>Nombre: <b>{{producto.nombre}}</b></p>
+        <p>Precio: <b>${{producto.precio}}</b></p>
+        <p>Creado: <b>{{producto.creado}}</b></p>
+      </div>
+  </div>
+    {% if usuario.is_superuser %}
+        <div class="producto__formularios formularios">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit" class="btn btn-primary btnAgregar">Actualizar</button>
+            </form>
+        </div>
+        {% else %}
+    {% endif %}
+</div>
+{% endblock contenido %}

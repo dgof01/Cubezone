@@ -1,0 +1,22 @@
+.agregarProducto {
+    width                   :       12rem;
+    img {
+    margin-left             :       31.5%;
+    }
+}
+
+.seccion1__columnasProductos {
+    .card__titulo {
+        background-color    :       $color-Morado;
+        color               :       $color-Header;
+    }
+    .card__valor {
+        p {
+        font-size           :       1.5rem;
+        }
+    }
+}
+
+.card__botones--usuarioNormal {
+    grid-template-columns   :       repeat(1,1fr);
+}

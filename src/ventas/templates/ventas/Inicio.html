@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+Inicio
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="seccion1">
+  <div class="container seccion1__columnas">
+    <div class="card">
+      <div class="card-body">
+        <div class="card__titulo">
+          <h4 class="card-title">Total de Ventas</h4>
+        </div>
+        <div class="card__cantidad">
+          <h5 class="card-title">{{cantidadVentas}}</h5>
+        </div>
+        <div class="card__valor">
+          <h5 class="card-title">${{ventasPrecioTotal}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="card card2">
+      <div class="card-body">
+        <div class="card__titulo">
+          <h4 class="card-title">Total de Productos</h4>
+        </div>
+        <div class="card__cantidad">
+          <h5 class="card-title">{{cantidadProductos}}</h5>
+        </div>
+        <div class="card__valor">
+          <h5 class="card-title">${{productosPrecioTotal}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="seccion2">
+  <div class="container seccion2__columnas">
+    <div class="card">
+      <div class="card-body">
+        <div class="card__titulo card__tituloS2">
+          <h4 class="card-title">Total de Clientes</h4>
+        </div>
+        <div class="card__cantidad card__cantidadS2">
+          <h5 class="card-title">{{cantidadClientes}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="card card2">
+      <div class="card-body">
+        <div class="card__titulo card__tituloS2">
+          <h4 class="card-title">Total de Reportes</h4>
+        </div>
+        <div class="card__cantidad card__cantidadS2">
+          <h5 class="card-title">{{cantidadReportes}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="seccion3">
+  <div class="container seccion3__columnas">
+    <div class="card">
+      <div class="card-body card-bodyS3">
+        <div class="card__titulo card__tituloS3">
+          <h4 class="card-title">Ventas</h4>
+        </div>
+        <div class="card__cantidad card__cantidadS3">
+          <a href="reportes/subidaArchivo/">Agregar</a>
+        </div>
+        <div class="card__valor card__valorS3">
+          <a href="ventas/">Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="card card2">
+      <div class="card-body card-bodyS3">
+        <div class="card__titulo card__tituloS3">
+          <h4 class="card-title">Productos</h4>
+        </div>
+        <div class="card__cantidad card__cantidadS3">
+          <a href="agregarProducto/">Agregar</a>
+        </div>
+        <div class="card__valor card__valorS3">
+          <a href="productos/">Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="card card2 card3">
+      <div class="card-body card-bodyS3">
+        <div class="card__titulo card__tituloS3">
+          <h4 class="card-title">Reportes</h4>
+        </div>
+        <div class="card__cantidad card__cantidadS3">
+          <a href="agregarReporte/">Agregar</a>
+        </div>
+        <div class="card__valor card__valorS3">
+          <a href="reportes/">Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="card card2 card3">
+      <div class="card-body card-bodyS3">
+        <div class="card__titulo card__tituloS3">
+          <h4 class="card-title">Clientes</h4>
+        </div>
+        <div class="card__cantidad card__cantidadS3">
+          <a href="agregarCliente/">Agregar</a>
+        </div>
+        <div class="card__valor card__valorS3">
+          <a href="clientes/">Ver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock contenido %}

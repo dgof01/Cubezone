@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'reportes/subidaArchivo.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block titulo %}
+Agregar Ventas
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container mt-3 mb-3">
+    <div class="subirArchivo">
+        <div class="subirArchivo__titulo">
+            <h5>Sube tus documentos de ventas</h5>
+        </div>
+        <div id="notificacionProceso"></div>
+        <form id="my-dropzone" class="dropzone dz">
+            {% csrf_token %}
+            <div class="dz-message" data-dz-message><span>Arrastra o da clic para subir el documento</span></div>
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock contenido %}

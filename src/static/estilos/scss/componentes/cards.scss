@@ -1,0 +1,134 @@
+.card {
+    position        :       static;
+    display         :       block;
+    flex-direction  :       row;
+    word-wrap       :       normal;
+    background-color:       transparent;
+    background-clip :       border-box;
+    border          :       none;
+    border-radius   :       0;
+    margin-left     :       auto;
+    margin-right    :       auto; 
+}
+
+.card2 {
+    margin-top      :       2rem;
+    @media (min-width: 768px) {
+    margin-top      :       0;
+    }
+}
+
+.card3 {
+    margin-top      :       2rem;
+    @media (min-width: 992px) {
+    margin-top      :       0;
+    }
+}
+
+.card-body {
+    background-color:       $color-Fondo;
+    border-radius   :       2rem;
+    width           :       14rem;
+    align-items     :       center;
+    text-align      :       center;
+    padding         :       0;
+
+    h5 {
+        font-size   :       1.5rem;
+    }
+
+    @media (min-width: 281px) {
+    width           :       16rem;
+    }
+}
+
+.card-bodyS3 {
+    border-radius   :       0;
+    width           :       12rem;
+    @media (min-width: 281px) {
+    width           :       12rem;
+    }
+}
+
+.card-title {
+    margin-top      :       .25rem;
+    margin-bottom   :       .25rem;
+}
+
+.card__titulo {
+    color           :       $color-Fondo;
+    padding         :       .5rem;
+    background-color:       $color-Amarillo;
+    border-top-left-radius: 1rem;
+    border-top-right-radius:1rem;
+}
+
+.card__tituloS2 {
+    background-color:       $color-Morado;
+    color           :       $color-Header;
+}
+
+.card__tituloS3 {
+    border-top-left-radius: 0;
+    border-top-right-radius:0;
+}
+
+.card__cantidad {
+    color           :       $color-Amarillo;
+    padding         :       .25rem;
+    background-color:       transparent;
+}
+
+.card__cantidadS3 {
+    background-color:       $color-Morado;
+    a {
+        font-size       :       1.25rem;
+        color           :       $color-Header;
+        text-decoration :       none;
+        transition      :       $hover;
+        &:hover {
+        color           :       $color-Fondo;
+        }
+    }
+}
+
+.card__cantidadS2 {
+    background-color:       $color-Fondo;
+    border-bottom   :       .15rem solid $color-Fondo;
+    border-left     :       .15rem solid $color-Fondo;
+    border-right    :       .15rem solid $color-Fondo; 
+    padding         :       .25rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.card__valor {
+    background-color:       $color-Morado;
+    border-bottom   :       .15rem solid $color-Fondo;
+    border-left     :       .15rem solid $color-Fondo;
+    border-right    :       .15rem solid $color-Fondo; 
+    padding         :       .25rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.card__valorS3 {
+    background-color:       transparent;
+    border-bottom   :       .15rem solid $color-Morado;
+    border-left     :       .15rem solid $color-Morado;
+    border-right    :       .15rem solid $color-Morado; 
+    padding         :       .25rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    a {
+        font-size       :       1.25rem;
+        color           :       $color-Header;
+        text-decoration :       none;
+        transition      :       $hover;
+        &:hover {
+        color           :       $color-Amarillo;
+        }
+    }
+}
+

@@ -1,0 +1,14 @@
+body {
+    font-family          :        'Museo_Slab_500_2';
+	background-color     :        $color-Fondo;
+	color				 : 		  $color-Header;
+	overflow-x			 : 		  hidden;
+}
+
+.oculto {
+	display				 : 		  none;
+}
+
+.login {
+	margin-top			 : 		  1.5rem;
+}

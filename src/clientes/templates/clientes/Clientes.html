@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'clientes/btnAgregarCliente.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block titulo %}
+Clientes
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="agregarVenta agregarVentaMT agregarCliente" id="agregarCliente">
+    <div>
+        <a href="{% url 'clientes:agregarCliente'%}" class="btn btn-success">Agregar Cliente</a>
+    </div>
+    <div>
+        <img src="{% static 'imgs/btn.png' %}" id="btn_AgregarCliente">
+    </div>
+</div>
+
+<div class="seccion1 seccion1--ListaVentas seccion1--ListaClientes">
+  <div class="container seccion1__columnas">
+    {% for cliente in clientes %}
+        <div class="card card--edit mb-3">
+            {% if cliente.foto %}
+                <img src="{{cliente.foto.url}}" class="card-img-top product_img" alt="{{cliente.nombre}}">
+            {% endif %}
+
+            <div class="card-body">
+                <div class="card__titulo">
+                    <h5 class="card-title">{{cliente.nombre}} {{cliente.primerApellido}} {{cliente.segundoApellido}}</h5>
+                </div>
+                <div class="card__valor">
+                    <p class="card-text">{{cliente.correo}}</p>
+                </div>
+                {% if usuario.is_superuser %}
+                <div class="card__botones">
+                    <a href="{{cliente.obtener_url}}" class="btn btn-success">Editar</a>
+                    <a href="{% url 'clientes:eliminarCliente' cliente.nombre %}" class="btn btn-danger">Eliminar</a>
+                </div>
+                {% else %}
+                <div class="card__botones card__botones--usuarioNormal">
+                    <a href="{{cliente.obtener_url}}" class="btn btn-success">Info</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock contenido %}

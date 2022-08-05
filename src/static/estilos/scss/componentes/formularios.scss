@@ -1,0 +1,80 @@
+.btnAgregar {
+    color                   :       $color-Header;
+    background-color        :       $color-Morado;
+    border-color            :       transparent;
+    transition              :       $hover;
+    display                 :       block;
+    margin-left             :       auto;
+    margin-right            :       auto;
+
+    &:hover {
+    color                   :       $color-Fondo;
+    background-color        :       $color-Amarillo;
+    border-color            :       transparent;
+    }
+}
+
+.btnAgregarModal {
+    margin-bottom           :       1.5rem;
+}
+
+.tituloFormulario {
+    h5 {
+    text-align              :       center;
+    margin-top              :       2rem;
+    margin-bottom           :       2rem;
+    font-size               :       1.5rem;
+}
+}
+
+.formularios {
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    input[type="file"],
+    input[type="password"],
+    select,
+    textarea {
+        cursor              :       pointer;
+        color               :       $color-Header;
+        margin-bottom       :       2rem;
+        background-color    :       transparent;
+        border              :       .15rem solid $color-Amarillo;
+        transition          :       $hover;
+
+        &:hover {
+        color               :       $color-Fondo;
+        background-color    :       $color-Amarillo;
+        }
+    }
+
+    ::-webkit-calendar-picker-indicator {
+        cursor              :       pointer;
+        filter              :       invert(1);
+    }
+
+    #hint_id_precio {
+        display             :       none;
+    }
+}
+
+.modalReporte {
+    background-color        :       $color-Fondo;
+    .modal-header {
+        border-bottom       :       .1rem solid $color-Morado;
+    }
+
+    .modal-title {
+        display             :       block;
+        margin-left         :       auto;
+    }
+    .btn-close {
+        filter              :       invert(1);
+    }
+
+    img {
+        margin-top          :       -1rem;
+        margin-bottom       :       1rem;
+    }
+}

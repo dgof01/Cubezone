@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block scripts %}
+    <script src="{% static 'productos/agregarProducto.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block titulo %}
+Agregar Producto
+{% endblock titulo %}
+
+{% block contenido %}
+
+<div class="container mt-3 mb-3 tituloFormulario">
+    <h5>Ingresa la información del producto nuevo</h5>
+    <div id="notificacionProceso"></div>
+    <form id="formularioProducto" class="formularios" autocomplete="off">
+        {% csrf_token %}
+        {{formularioProducto|crispy}}
+        <button type="submit" class="btn btn-info mt-2 btnAgregar">Agregar</button>
+    </form>
+</div>
+
+{% endblock contenido %}

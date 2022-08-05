@@ -1,0 +1,50 @@
+.detallesProducto {
+    color                   :       $color-Header;
+    ul {
+        list-style-type     :       none;
+    }
+
+    .producto__img {
+        display             :       block;
+        margin-left         :       auto;
+        margin-right        :       auto;
+        width               :       8rem;
+        border              :       .25rem solid $color-Morado;
+        border-bottom       :       none;
+    }
+
+    .producto__info {
+        text-align          :       center;
+        color               :       $color-Header;
+        background-color    :       transparent;
+        border              :       .25rem solid $color-Morado;
+        p {
+            margin-top      :       1rem;
+            font-size       :       1.05rem;
+        }
+
+        b {
+            color           :       $color-Amarillo;
+        }
+    }
+
+    .producto__formularios {
+        padding             :       1.5rem;
+        border              :       none;
+        border-top          :       none;
+
+        a {
+           text-decoration  :       none; 
+           color            :       $color-Morado;
+        }
+
+        .btnAgregar {
+            margin-bottom   :       .5rem
+        }
+
+        @media (min-width: 450px) {
+            border          :       .25rem solid $color-Morado;
+            border-top      :       none;
+        }
+    }
+}

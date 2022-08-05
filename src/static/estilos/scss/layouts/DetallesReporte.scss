@@ -1,0 +1,62 @@
+.detallesReporte {
+    img {
+        margin-top      :       1rem;
+        display         :       block;
+        margin-left     :       auto;
+        margin-right    :       auto;
+    }
+
+    h3 {
+        color           :       $color-Amarillo;
+    }
+
+    b {
+        color           :      $color-Amarillo;
+    }
+}
+
+#btnReporte {
+    margin-bottom       :       2rem;
+}
+
+.tablaDetalle--Reporte {
+    margin-top          :       2rem;
+    margin-bottom       :       2rem;
+    background-color    :       transparent;
+
+    table {
+        margin-bottom   :       2rem;
+        margin-left     :       auto;
+        margin-right    :       auto;
+    }
+
+    thead {
+        th {
+            background-color:   $color-Morado;
+        }
+    }
+
+    tbody {
+        td {
+            border      :       .15rem solid $color-Amarillo;
+        }
+    }
+
+    th {
+        border          :       .15rem solid $color-Amarillo;
+        text-align      :       center;
+        padding         :       1rem;
+    }
+
+    .reporte__img {
+        margin-top      :       2rem;
+        
+        img {
+            // min-width       :       150%;
+            display     :       block;
+            margin-left :       auto;
+            margin-right:       auto;
+            height      :       auto;
+        }
+    }
+}

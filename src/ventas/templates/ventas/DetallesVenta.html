@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Detalles de {{object.id_orden}}
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container detallesVenta">
+  <div class="">
+      <div class="venta__img">
+          <img src="{{object.cliente.foto.url}}" class="img-fluid" alt="{{object.cliente.nombre}}">
+      </div>
+      <div class="venta__info">
+          <p>Id de la Orden: <b>{{object.id_orden}}</b> </p>
+          <p>Vendedor: <b>{{object.vendedor.usuario.username}}</b> </p>
+      </div>
+  </div>
+
+  <div class="tablaDetalle">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="venta__texto" scope="col">#</th>
+          <th class="venta__texto" scope="col">Producto</th>
+          <th class="venta__texto" scope="col">Cantidad</th>
+          <th class="venta__texto" scope="col">Precio</th>
+          <th class="venta__texto" scope="col">Cliente</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pos in object.obtener_ordenes %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{pos.producto.nombre}}</td>
+                <td>{{pos.cantidad}}</td>
+                <td>{{pos.precio}}</td>
+                <td>{{pos.obtener_cliente}}</td>
+            </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+{% endblock contenido %}

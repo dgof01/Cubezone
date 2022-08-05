@@ -1,0 +1,75 @@
+.agregarVenta {
+    cursor                  :       pointer;
+    width                   :       10rem;
+    display                 :       block;
+    margin-left             :       auto;
+    margin-right            :       auto;
+    transition              :       $hover;
+    img {
+    height                  :       2rem;
+    margin-left             :       28.5%;
+    }
+
+    .btn {
+    background-color        :       $color-Morado;
+    color                   :       $color-Header;
+    border-color            :       transparent;
+    border-radius           :       0;
+    transition              :       $hover;
+    &:hover{
+    background-color        :       $color-Amarillo;
+    color                   :       $color-Fondo;
+    }
+    }
+}
+
+.agregarVentaMT {
+    margin-top              :       -2.5rem;
+}
+
+.seccion1--ListaVentas {
+    background-color        :       transparent;
+
+    .seccion1__columnas {
+    grid-template-columns   :       repeat(1,1fr);
+    padding                 :       1rem;
+    @media (min-width: 768px) {
+    grid-template-columns   :       repeat(2,1fr);
+    }
+    @media (min-width: 992px) {
+    grid-template-columns   :       repeat(3,1fr);
+    }
+    @media (min-width: 1400px) {
+    grid-template-columns   :       repeat(4,1fr);
+    }
+    }
+
+    .card {
+    margin-top              :       2rem;
+    }
+
+    .card__titulo {
+    border-top-left-radius  :       0;
+    border-top-right-radius :       0;
+    }
+
+    .card__cantidad {
+    color                   :       $color-Header;
+    background-color        :       $color-Morado;
+    }
+
+    .card__valor {
+    background-color        :       transparent;
+    border                  :       .2rem solid $color-Morado;
+    border-bottom-left-radius:      0;
+    border-bottom-right-radius:     0;
+    }
+}
+
+.card__botones {
+    display                 :       grid;
+    grid-template-columns   :       repeat(2,1fr);
+    .btn {
+    border-radius           :       0;
+    }
+}

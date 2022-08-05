@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+{{perfil.usuario.username}}
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container perfil">
+    {% if actualizado %}
+        <div class="alert alert-primary" role="alert">
+            La información de tu perfil ha sido actualizada
+        </div>
+    {% endif %}
+
+    <div class="text-center">
+        <img src="{{perfil.foto.url}}" alt="my-profile" class="avatar-big">
+    </div>
+
+    <br>
+
+    {% if perfil.usuario.is_superuser %}
+    <p>Super Usuario</p>
+    {% else %}
+    <p>Usuario Normal</p>
+    {% endif %}
+
+    <form action="" class="formularios" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{formulario|crispy}}
+        <button type="submit" class="btn btn-primary btnAgregar">Actualizar</button>
+    </form>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,22 @@
+@import "./variables/breakpoints.scss";
+@import "./variables/mixins";
+@import "./variables/variables.scss";
+@import "./variables/apilamiento-z.scss";
+@import "./base/base.scss";
+
+@import "./componentes/header.scss";
+@import "./componentes/cards.scss";
+@import "./componentes/detallesVenta.scss";
+@import "./componentes/dropzone.scss";
+@import "./componentes/perfiles.scss";
+@import "./componentes/productos.scss";
+@import "./componentes/formularios.scss";
+
+@import "./layouts/Inicio.scss";
+@import "./layouts/ListaVentas.scss";
+@import "./layouts/ListaProductos.scss";
+@import "./layouts/ListaReportes.scss";
+@import "./layouts/ListaClientes.scss";
+
+@import "./layouts/DetallesProducto.scss";
+@import "./layouts/DetallesReporte.scss";

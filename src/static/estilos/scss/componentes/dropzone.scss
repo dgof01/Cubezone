@@ -1,0 +1,56 @@
+.subirArchivo {
+    text-align      :       center;
+}
+
+.subirArchivo__titulo {
+    padding         :       1rem;
+    margin          :       1.5rem;
+    h5 {
+    font-size       :       1.1rem;
+    @media (min-width: 509px) {
+    font-size       :       1.5rem;
+    }
+    @media (min-width: 992px) {
+    font-size       :       2rem;
+    }
+    }
+}
+
+.dz {
+    margin-left     :       auto;
+    margin-right    :       auto;
+    width           :       90%;
+    background-color:       transparent;
+    border-radius   :       1rem;
+    border-color    :       $color-Amarillo;
+    transition      :       $hover;
+    &:hover {
+    background-color:       $color-Morado;
+    opacity         :       .2;
+    }
+    @media (min-width: 509px) {
+    width           :       80%;
+    }
+
+    @media (min-width: 768px) {
+    width           :       60%;
+    }
+    
+    @media (min-width: 992px) {
+    width           :       60%;
+    }
+}
+
+.dz-message {
+    margin          :       0;
+    padding-top     :       5;
+    font-size       :       1rem;
+    @media (min-width: 509px) {
+    margin          :       0;
+    font-size       :       1.05rem;
+    }
+    @media (min-width: 992px) {
+    margin          :       0;
+    font-size       :       1.25rem;
+    }
+}

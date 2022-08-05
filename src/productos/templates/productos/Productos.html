@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'productos/btnAgregarProducto.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block titulo %}
+Productos
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="agregarVenta agregarVentaMT agregarProducto" id="agregarProducto">
+    <div>
+        <a href="{% url 'productos:agregarProducto'%}" class="btn btn-success">Agregar Producto</a>
+    </div>
+    <div>
+        <img src="{% static 'imgs/btn.png' %}" id="btn_AgregarProducto">
+    </div>
+</div>
+
+<div class="seccion1 seccion1--ListaVentas">
+  <div class="container seccion1__columnas seccion1__columnasProductos">
+    {% for producto in productos %}
+        <div class="card card--edit mb-3">
+            {% if producto.imagen %}
+                <img src="{{producto.imagen.url}}" class="card-img-top product_img" alt="{{producto.nombre}}">
+            {% endif %}
+            <div class="card-body">
+                <div class="card__titulo">
+                    <h5 class="card-title">{{producto.nombre|truncatewords:2}}</h5>
+                </div>
+                <div class="card__valor">
+                    <p class="card-text">${{producto.precio|truncatewords:2}}</p>
+                </div>
+                {% if usuario.is_superuser %}
+                <div class="card__botones">
+                    <a href="{{producto.obtener_url}}" class="btn btn-success">Editar</a>
+                    <a href="{% url 'productos:eliminarProducto' producto.nombre %}" class="btn btn-danger">Eliminar</a>
+                </div>
+                {% else %}
+                <div class="card__botones card__botones--usuarioNormal">
+                    <a href="{{producto.obtener_url}}" class="btn btn-success">Info</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block scripts %}
+    <script src="{% static 'ventas/AgregarVenta.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block titulo %}
+Ventas
+{% endblock titulo %}
+
+{% block contenido %}
+
+<div class="agregarVenta agregarVentaMT" id="agregarVenta">
+    <div>
+        <a href="{% url 'reportes:SubidaDeArchivo'%}" class="btn btn-success">Agregar Venta</a>
+    </div>
+    <div>
+        <img src="{% static 'imgs/btn.png' %}" id="btn_AgregarVenta">
+    </div>
+</div>
+
+<div class="seccion1 seccion1--ListaVentas">
+  <div class="container seccion1__columnas">
+    {% for venta in object_list %}
+    <div class="card card--edit mb-3">
+        <div class="card-body">
+            <div class="card__titulo">
+                <h4 class="card-title">{{venta.id_orden}}</h4>
+            </div>
+            <div class="card__cantidad">
+                <h5 class="card-title">Venta de {{venta.vendedor.usuario.username}}</h5>
+            </div>
+            <div class="card__valor">
+                <h5 class="card-title">${{venta.precio_total}}</h5>
+            </div>
+            <div class="card__botones">
+                <a href="{{venta.obtener_url}}" class="btn btn-success">Info</a>
+                <a href="{% url 'ventas:eliminar' venta.id_orden %}" class="btn btn-danger">Borrar</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock contenido %}

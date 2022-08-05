@@ -1,0 +1,96 @@
+.container-fluid {
+    width           :       100%;
+    @media (min-width: 407px) {
+        width       :       90%;
+    }
+}
+
+.usuario__nombre {
+    padding-left    :       0;
+    display         :       none;
+    @media (min-width: 501px) {
+        padding-left:       .5rem;
+        display     :       inline-block;
+    }
+}
+
+.seleccionado {
+    a {
+        color		:	    $color-Morado;
+    }
+}
+
+.nav-link {
+    color           :       $color-Fondo;
+    margin-right    :       1rem;
+    margin-left     :       1rem;
+    transition      :       $hover;
+    &:hover {
+    color           :       $color-Morado;
+    }
+}
+
+.navbar {
+    background-color:       $color-Header;
+    padding-top     :       0;
+    padding-bottom  :       0;
+    color           :       $color-Fondo;
+}
+
+.navbar-brand {
+    margin-right    :       0;
+    margin-left     :       .75rem;
+    @media (min-width: 992px) {
+        margin-right:       1rem;
+        margin-left :       0rem;
+    }  
+}
+
+.navbar-collapse {
+    flex-grow       :       0;
+}
+
+.navbar-toggler {
+    margin-left     :       5%;
+}
+
+.usuario__foto {
+    height          :       $logo-tamanio;
+    width           :       auto;
+    border-radius   :       50%;
+}
+
+.usuario__menu {
+    margin-left     :       0rem;
+    @media (min-width: 992px) {
+        margin-left :       1rem;
+    }
+}
+
+.logo__cubezone {
+    height          :       $logo-tamanio;
+    width           :       auto;
+}
+
+.dropdown-menu[data-bs-popper] {
+    left            :       25%;
+    margin-top      :       -.125rem;
+}
+
+.dropdown-menu {
+    color           :       $color-Fondo;
+    background-color:       $color-Header;
+    border-color    :       transparent;
+    padding         :       0 0;
+    text-align      :       center;
+    min-width       :       5rem;
+    .dropdown-item {
+     color          :       inherit;
+     background-color:      inherit;
+     transition     :       $hover;
+     &:hover {
+         color      :       $color-Morado;
+         background-color:  $color-Amarillo;
+     }   
+    }
+}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block scripts %}
+    <script src="{% static 'ventas/Inicio.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block titulo %}
+Agregar Reporte
+{% endblock titulo %}
+
+{% block contenido %}
+<!-- Modal -->
+<div class="modal fade" id="modalReporte" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modalReporte">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Reporte</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <div id="notificacionProceso"></div>
+        <form id="formularioReporte" class="formularios" autocomplete="off">
+            {% csrf_token %}
+            {{formulario_Reporte|crispy}}
+            <button type="submit" class="btn btn-info mt-2 btnAgregar btnAgregarModal">Agregar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3 mb-3">
+
+{% if sin_datos %}
+  <div class="alert alert-warning" role="alert">
+      {{sin_datos}}
+  </div>
+{% endif %}
+
+<form action="" class="formularios" method="POST">
+    {% csrf_token %}
+    {{formulario_Ventas|crispy}}
+    <button type="submit" class="btn btn-primary mt-3 btnAgregar">Buscar</button>
+</form>
+
+<div class="tablaDetalle tablaDetalle--Reporte">
+  {% if df_ventas %}
+      {{df_ventas|safe}}
+      {{df_ordenes|safe}}
+      {{df_merged|safe}}
+      {{df|safe}}
+      <div class="reporte__img">
+        <img src="data:image/png;base64, {{grafica|safe}}" id='img'>
+      </div>
+  {% endif %}
+</div>
+
+
+<button class="btn btn-primary oculto" id="btnReporte" data-bs-toggle="modal" data-bs-target="#modalReporte">Agregar Reporte</button>
+
+</div>
+{% endblock contenido %}

@@ -1,0 +1,52 @@
+.detallesVenta {
+    color                   :       $color-Header;
+    ul {
+        list-style-type     :       none;
+    }
+
+    .venta__img {
+        display             :       block;
+        margin-left         :       auto;
+        margin-right        :       auto;
+        width               :       8rem;
+        border              :       .25rem solid $color-Morado;
+        border-bottom       :       none;
+    }
+
+    .venta__info {
+        text-align          :       center;
+        color               :       $color-Header;
+        background-color    :       transparent;
+        border              :       .25rem solid $color-Morado;
+        p {
+            margin-top      :       1rem;
+            font-size       :       1.05rem;
+        }
+
+        b {
+            color           :       $color-Amarillo;
+        }
+    }
+}
+
+.tablaDetalle {
+    background-color        :       $color-Morado;
+    overflow-x              :       auto;
+    
+    table {
+        text-align          :       center;
+        vertical-align      :       middle;
+        color               :       $color-Header;
+        .venta__texto {
+            color           :       $color-Amarillo;
+        }
+    }
+
+    tbody {
+        background-color    :       $color-Fondo;
+
+        th, td {
+            padding         :       1.5rem;
+        }
+    }
+}

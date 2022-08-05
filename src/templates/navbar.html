@@ -1,0 +1,51 @@
+{% load static %}
+{% url 'ventas:inicio' as inicio %}
+{% url 'ventas:ventas' as ventas %}
+{% url 'productos:productos' as productos %}
+{% url 'clientes:clientes' as clientes %}
+{% url 'reportes:SubidaDeArchivo' as subida %}
+{% url 'reportes:Reportes' as reportes %}
+{% url 'perfiles:perfil' as perfil %}
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">    
+      <a class="navbar-brand" href=""><img src="{% static 'imgs/logo_cubezone.png' %}" class="logo__cubezone"></a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="{% static 'imgs/menu.svg' %}" class="logo__cubezone">
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item {% if request.path == inicio %}seleccionado{% endif %}">
+            <a class="nav-link" href="{{inicio}}">Inicio</a>
+          </li>
+          <li class="nav-item {% if request.path == ventas %}seleccionado{% endif %}">
+              <a class="nav-link" href="{{ventas}}">Ventas</a>
+          </li>
+          <li class="nav-item {% if request.path == productos %}seleccionado{% endif %}">
+              <a class="nav-link" href="{{productos}}">Productos</a>
+          </li>
+          <li class="nav-item {% if request.path == reportes %}seleccionado{% endif %}">
+              <a class="nav-link" href="{{reportes}}">Reportes</a>
+          </li>
+          <li class="nav-item {% if request.path == clientes %}seleccionado{% endif %}">
+              <a class="nav-link" href="{{clientes}}">Clientes</a>
+          </li>
+        </ul>
+      </div>
+
+      {% if request.user.is_authenticated %}
+        <div class="nav-item dropdown">
+          <div class="nav-link dropdown-toggle usuario__menu" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{{request.user.perfil.foto.url}}" class="usuario__foto"><span class="usuario__nombre">{{request.user}}</span>
+          </div>
+          <ul class="dropdown-menu {% if request.path == perfil %}seleccionado{% endif %}" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{{perfil}}">Perfil</a></li>
+            <li><a class="dropdown-item" href="{% url 'cerrarSesion' %}">Salir</a></li>
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </nav>
+</header>
